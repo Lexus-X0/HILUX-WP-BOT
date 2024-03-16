@@ -1,6 +1,6 @@
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-## Ezra-XD Whatsapp Bot
-Ezra-XD - Simple whatsapp Multi Device bot based on 
+
+## HILUX
+Simple whatsapp Multi Device bot based on 
 Xasena 
 
 ***
