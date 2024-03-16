@@ -1,23 +1,22 @@
 {
-  "name": "Ezra-XD",
-  "description": "EZRA Multi Device whatsapp bot",
-  "logo": "https://i.imgur.com/pae05LQ.jpeg",
-  "keywords": ["whatsapp"],
-  "repository": "https://github.com/Louis-XD/EZRA-XD",
-  "website": "https://github.com/Louis-XD/EZRA-XD",
-  "success_url": "https://github.com/Louis-XD/EZRA-XD",
+  "name": "HILUX",
+  "version": "1.0.0",
+  "description": "Simple WhatsApp Bot",
+  "logo": "https://i.imgur.com/zwyUBQw.jpeg",
+   "keywords": ["whatsapp", "bot", "md", "multi-device", "wabot", "termux-bot", "sc-bot"],
+  "repository": "https://github.com/Lexus-X0/HILUX-WP-BOT",
   "stack": "container",
   "env": {
     "ANTI_LINK": {
       "description": "true/false",
-      "required": false
+      "required": true
     },
     "ANTILINK_ACTION": {
-      "description": "kick",
-      "required": false
+      "description": "",
+      "required": ture
     },
     "SESSION_ID": {
-      "description": "Ezra-XD session id",
+      "description": "Enter your session id",
       "required": true
     },
     "LOGS": {
@@ -25,33 +24,29 @@
       "required": false
      },
      "AUDIO_DATA": {
-      "description": "audio data , title;artist;image url",
+      "description": "Ebter audio data ",
       "required": "false",
-      "value": "𝐋𝐨𝐮𝐢𝐬-𝐗𝐃;𝐄𝐳𝐫𝐚 𝐗𝐃; https://i.imgur.com/Ou56ggv.jpeg"
-     },
-     "CAPTION": {
-      "description": "enter your media caption",
-      "required": "false",
-      "value": "\n\n\n\n\n 𝙀𝙯𝙧𝙖𝙖𝙖𝙖𝙖𝙖𝙝𝙝𝙝𝙝🥹💕"
+      "value": "𝘏𝘪𝘭𝘶𝘹 𝘣𝘰𝘵;𝘬𝘢𝘻𝘩𝘶𝘷𝘦𝘳𝘪; https://i.imgur.com/BAOJ7jO.jpeg"
+    
     },
        "STICKER_DATA": {
-      "description": "Sticker pack name, eg : Ezra;©️Louis-X0",
+      "description": " Enter Sticker pack name",
       "required": "false",
-      "value": "𝐄𝐳𝐫𝐚 𝐗𝐃;©️ 𝐋𝐨𝐮𝐢𝐬-𝐗𝐃"
+      "value": "hilux bot;kazhuveri"
     },
        "BOT_INFO": {
-      "description": "Bot info : botname;ownername;imageurl - image or video",
-      "required": "false",
-      "value": "𝐋𝐨𝐮𝐢𝐬-𝐗𝐃;𝐋𝐨𝐮𝐢𝐬-𝐗𝐃;https://i.imgur.com/nAkM1zV.mp4"
+      "description": "Enter your bot info",
+      "required": "true",
+      "value": "HILUX BOT;kazhuveri;https://i.imgur.com/BAOJ7jO.jpeg"
     },
      "ALWAYS_ONLINE": {
       "description": "Bot online online : true",
-      "required": "false",
+      "required": "true",
       "value": "false"
     },
     "SUDO": {
       "description": "sudo numbers with country code seperate with , for multiple numbers",
-      "required": false
+      "required": true
     },
     "WORK_TYPE": {
       "description": "bot work mode",
@@ -59,9 +54,9 @@
       "value": "private"
      },
     "PREFIX": {
-      "description": "Example 1: ^[.,!#]  example 2 ^ 👈🏻 Handlers disable",
+      "description": "add a prefix { ^ is no prefix } ",
       "required": true,
-       "value":"^[.,]"
+       "value":"."
      },
     "HEROKU_APP_NAME": {
       "description": "Heroku app name, same as above entered",
