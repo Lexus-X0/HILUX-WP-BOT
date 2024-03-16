@@ -13,7 +13,7 @@
     },
     "ANTILINK_ACTION": {
       "description": "",
-      "required": ture
+      "required": true
     },
     "SESSION_ID": {
       "description": "Enter your session id",
