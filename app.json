@@ -15,10 +15,6 @@
       "description": "",
       "required": true
     },
-    "SESSION_ID": {
-      "description": "Enter your session id",
-      "required": true
-    },
     "LOGS": {
       "description": "need to show message logs ?",
       "required": false
