@@ -36,14 +36,14 @@ Description: ${i.desc}\`\`\``);
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
 
-      let menu = `╔════════════╗ \n         *SUPERIOR* \n╚════════════╝
-╔══════════════╗
+      let menu = `╭───────────┈⊷ \n         *SUPERIOR* \n╰───────────┈⊷╝
+╭───────────┈⊷
 ╠» Prefix : ${config.HANDLERS}
 ╠» mode :${config.WORK_TYPE.toLowerCase()}
 ╠» Date : ${date}
 ╠» Time : ${time}
 ╠» Creator : Superior
-╚══════════════╝\n${readMore}\n`;
+╰───────────┈⊷\n${readMore}\n`;
 
 menu +=`\n`;
 
@@ -65,9 +65,9 @@ menu +=`\n`;
       });
       cmnd.sort();
       category.sort().forEach((cmmd) => {
-        menu += `╔══════════════╗`;
-        menu += `\n╠═ ⪼ 「 *${cmmd.toUpperCase()}* 」`;
-        menu += `\n╚══════════════╝`
+        menu += `╭───────────┈⊷`;
+        menu += `\n│═ ⪼ 「 *${cmmd.toUpperCase()}* 」`;
+        menu += `\n╰───────────┈⊷`
 menu += `\n`;
         let comad = cmnd.filter(({ type }) => type == cmmd);
         comad.forEach(({ cmd }) => {
