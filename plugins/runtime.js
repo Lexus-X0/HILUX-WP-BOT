@@ -6,7 +6,7 @@ command({
         desc: "Bot Runtime", 
         type: "user",
     }, async (msg, match ) => {
-let run = runtime(process.uptime())
+let kunna = runtime(process.uptime())
 
-await msg.reply(`*_Runtime: ${run}_*`)
+await msg.reply(`_Runtime: ${kunna}_`)
 });
