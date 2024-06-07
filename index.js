@@ -10,10 +10,10 @@ const { Message, Image, Sticker } = require("./lib/Base");
 const pino = require("pino");
 const path = require("path");
 const events = require("./lib/event");
+const Greetings = require("./lib/Greetings");
 const got = require("got");
 const config = require("./config");
 const { PluginDB } = require("./lib/database/plugins");
-const Greetings = require("./lib/Greetings");
 const { MakeSession } = require("./lib/session");
 const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
@@ -21,11 +21,6 @@ const store = makeInMemoryStore({
 
 require("events").EventEmitter.defaultMaxListeners = 500;
       
-if (!fs.existsSync("./lib/session/creds.json")) {
-  MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://ajsalsd:rioHWvIFV7nkxkWz@cluster0.d0hnfmp.mongodb.net/?retryWrites=true&w=majority").then(
-    console.log("Vesrion : " + require("./package.json").version)
-  );
-}
 fs.readdirSync("./lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
     require("./lib/database/" + plugin);
@@ -59,8 +54,9 @@ async function Abhiy() {
   conn.ev.on("connection.update", async (s) => {
     const { connection, lastDisconnect } = s;
     if (connection === "connecting") {
-      console.log("Ezra");
-      console.log("𝗥𝗘𝗔𝗗𝗜𝗡𝗚 𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗜𝗗🪫");
+      console.log(" _This is Kadayadi md_ ");
+      console.log(" _Session Connecting.._ ");
+      console.log(" _Session Connected...._ ");
     }
 
     if (
@@ -75,8 +71,9 @@ async function Abhiy() {
 
     if (connection === "open") {
     
-      console.log("𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗙𝗨𝗟𝗟𝗬 𝗟𝗢𝗚𝗜𝗡𝗘𝗗 𝗜𝗡𝗧𝗢 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣🧩");
-      console.log("𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗜𝗡𝗚 𝗣𝗟𝗨𝗚𝗜𝗡𝗦🛠️");
+      console.log(" _Connected Whatsapp_ ");
+      console.log(" _Plugins installing_ ");
+      
 
       let plugins = await PluginDB.findAll();
       plugins.map(async (plugin) => {
@@ -92,15 +89,15 @@ async function Abhiy() {
           }
         }
       });
-      console.log(" 𝗣𝗹𝘂𝗴𝗶𝗻𝘀 𝗜𝗻𝘀𝘁𝗮𝗹𝗹𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆🧩");
+      console.log(" _Plugins Installed_ ");
 
       fs.readdirSync("./plugins").forEach((plugin) => {
         if (path.extname(plugin).toLowerCase() == ".js") {
           require("./plugins/" + plugin);
         }
       });
-      console.log(" 𝗘𝘇𝗿𝗮-𝗫𝗗 𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗙𝗨𝗟𝗟𝗬🔋");
-      let str = `𝐄𝐙𝐑𝐀 𝐗𝐃 𝐒𝐓𝐀𝐑𝐓𝐄𝐃 \n\n\n𝘝𝘌𝘙𝘚𝘐𝘖𝘕   : *${require("./package.json").version }* \n𝘗𝘓𝘜𝘎𝘐𝘕𝘚  : *${events.commands.length}* \n𝘔𝘖𝘋𝘌  : *${config.WORK_TYPE}* \n𝘗𝘙𝘌𝘍𝘐𝘟  : *${config.HANDLERS}*`;
+      console.log(" _Kadayadi Md Started ✔️_ ");
+      let str = `_Kadayadi Started_ \n\n𝘝𝘌𝘙𝘚𝘐𝘖𝘕   : _${require("./package.json").version }_`;
       conn.sendMessage(conn.user.id, { text: str });
      try {
         conn.ev.on("creds.update", saveCreds);
