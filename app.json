@@ -1,5 +1,5 @@
 {
-  "name": "HILUX",
+  "name": "KADAYADI",
   "version": "1.0.0",
   "description": "Simple WhatsApp Bot",
   "logo": "https://i.imgur.com/zwyUBQw.jpeg",
@@ -22,18 +22,18 @@
      "AUDIO_DATA": {
       "description": "Ebter audio data ",
       "required": "false",
-      "value": "𝘏𝘪𝘭𝘶𝘹 𝘣𝘰𝘵;𝘬𝘢𝘻𝘩𝘶𝘷𝘦𝘳𝘪; https://i.imgur.com/BAOJ7jO.jpeg"
+      "value": "𝘒𝘢𝘥𝘢𝘺𝘢𝘥𝘪 𝘣𝘰𝘵;𝘉𝘺 𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳; https://i.imgur.com/BAOJ7jO.jpeg"
     
     },
        "STICKER_DATA": {
       "description": " Enter Sticker pack name",
       "required": "false",
-      "value": "hilux bot;kazhuveri"
+      "value": "𝘬𝘢𝘥𝘢𝘺𝘢𝘥𝘪 𝘣𝘰𝘵;𝘣𝘺 𝘴𝘶𝘱𝘦𝘳𝘪𝘰𝘳"
     },
-       "BOT_INFO": {
+       "BOT_Name": {
       "description": "Enter your bot info",
       "required": "true",
-      "value": "HILUX BOT;kazhuveri;https://i.imgur.com/BAOJ7jO.jpeg"
+      "value": "Kadayadi BOT"
     },
      "ALWAYS_ONLINE": {
       "description": "Bot online online : true",
@@ -52,7 +52,7 @@
     "PREFIX": {
       "description": "add a prefix { ^ is no prefix } ",
       "required": true,
-       "value":"."
+       "value":"π"
      },
     "HEROKU_APP_NAME": {
       "description": "Heroku app name, same as above entered",
