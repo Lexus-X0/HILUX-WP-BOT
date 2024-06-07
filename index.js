@@ -32,7 +32,7 @@ async function Abhiy() {
   await config.DATABASE.sync();
 
   const { state, saveCreds } = await useMultiFileAuthState(
-  "./lib/session" ,
+  "./session" ,
     pino({ level: "silent" })
   );
   let conn = makeWASocket({
