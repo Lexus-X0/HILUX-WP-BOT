@@ -18,12 +18,6 @@ const got = require("got");
 const fs = require("fs");
 const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
-
 command(
     {
         pattern: "ping",
@@ -33,35 +27,29 @@ command(
     },
     async (message, match, client) => {
         const start = new Date().getTime();
-      let { key } = await message.sendMessage(`*𝙿ong ㋞*`);
+      let { key } = await message.sendMessage(`_Checking_`);
         const end = new Date().getTime();
 var speed = end - start;
  
 await new Promise(t => setTimeout(t,0))
-         await message.client.sendMessage(message.jid,{text:`*response* ㋚
-${speed} *𝚖𝚜*` , edit: key});
+         await message.client.sendMessage(message.jid,{text:`_Speedlimit:_
+${speed} _𝚖𝚜_` , edit: key});
 })
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 
 command(
   {
-    pattern: "pp$",
+    pattern: "pp",
     fromMe: true,
     desc: "Set full screen profile picture",
     type: "user",
   },
   async (message, match,m) => {
     if (!message.reply_message.image)
-      return await message.reply("*_Reply to a photo_*");
+      return await message.reply("_Reply to a photo_");
     let media = await m.quoted.download();
     await updateProfilePicture(message.user, media, message);
-    return await message.reply("*_Profile Picture Updated_*");
+    return await message.reply("_kadayadi profile Updated_");
   }
 );
 
@@ -97,12 +85,6 @@ async function generateProfilePicture(buffer) {
 }
 
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
-
 command(
   {
     pattern: "block",
@@ -113,23 +95,17 @@ command(
   async (message, match) => {
     if (message.isGroup) {
       let jid = message.mention[0] || message.reply_message.jid;
-      if (!jid) return await message.reply("*_Need a number/reply/mention!_*");
+      if (!jid) return await message.reply("_kadayadi mone reply or mention him!_");
       await message.block(jid);
       return await message.sendMessageMessage(`_@${jid.split("@")[0]} Blocked_`, {
         mentions: [jid],
       });
     } else {
       await message.block(message.jid);
-      return await message.reply("_User blocked_");
+      return await message.reply("_kadayadi blocked_");
     }
   }
 );
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   {
@@ -141,23 +117,17 @@ command(
   async (message, match) => {
     if (message.isGroup) {
       let jid = message.mention[0] || message.reply_message.jid;
-      if (!jid) return await message.reply("*_Need a number/reply/mention!_*");
+      if (!jid) return await message.reply("_kadayadi mone reply or mention him!_");
       await message.block(jid);
-      return await message.sendMessage(`*_@${jid.split("@")[0]} unblocked_*`, {
+      return await message.sendMessage(`_@${jid.split("@")[0]} unblocked_`, {
         mentions: [jid],
       });
     } else {
       await message.unblock(message.jid);
-      return await message.reply("*_User unblocked_*");
+      return await message.reply("_kadayadi unblocked_");
     }
   }
 );
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -173,12 +143,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
-
 command(
   {
     pattern: "dlt",
@@ -187,65 +151,12 @@ command(
     type: "user",
   },
   async (message, match,m,client) => {
-    if (!message.reply_message) return await message.reply("*_Reply to a message_*"); {
+    if (!message.reply_message) return await message.reply("_Reply to a message_"); {
       await client.sendMessage(message.jid, { delete: message.reply_message.key })
     }
   }
 );
 
-
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - */
-
-command(
-  {
-    pattern: "list",
-    fromMe: isPrivate,
-    desc: "Show All Commands",
-    type: "user",
-    dontAddCommandList: true,
-  },
-  async (message, match, { prefix }) => {
-    let menu = `╭───────┈┫「 *𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐋𝐢𝐬𝐭* 」┣┈────♡`;
-    menu += `\n│\n`;
-
-    let cmnd = [];
-    let cmd, desc;
-    plugins.commands.map((command) => {
-      if (command.pattern) {
-        cmd = command.pattern.toString().split(/\W+/)[1];
-      }
-      desc = command.desc || false;
-
-      if (!command.dontAddCommandList && cmd !== undefined) {
-        cmnd.push({ cmd, desc });
-      }
-    });
-    cmnd.sort();
-    cmnd.forEach(({ cmd, desc }, num) => {
-      menu += `│  ${(num += 1)}. *${cmd.trim()}*`;
-      if (desc) menu += `\n│  Use: \`\`\`${desc}\`\`\``;
-      menu += `\n│\n`;
-    });
-    menu += `╰───────┈┫「 𝐄𝐙𝐑𝐀-𝐗𝐃-𝐁𝐎𝐓 」┣┈────♡`;
-    return await message.reply(message.jid, { text: (tiny(menu)), contextInfo: { externalAdReply: {
-title: "𝚵𝚭𝚪𝚫-𝚾𝐃",
-sourceUrl: "",
-mediaUrl: "https://instagram.com/abhiiiiiyh",
-mediaType: 1,
-showAdAttribution: true,
-renderLargerThumbnail: false,
-thumbnailUrl: "https://i.imgur.com/PlDhcfI.jpeg" }} }) })
-
-
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   {
@@ -255,12 +166,12 @@ command(
     type:'user'
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("*_Send a plugin url_*");
+    if (!match) return await message.sendMessage("_gibe me plugin url_");
     for (let Url of getUrl(match)) {
       try {
         var url = new URL(Url);
       } catch {
-        return await message.sendMessage("*_Invalid Url_*");
+        return await message.sendMessage("_Invalid Url umbikko_");
       }
 
       if (url.host === "gist.github.com") {
@@ -285,24 +196,18 @@ command(
           require("./" + plugin_name);
         } catch (e) {
           fs.unlinkSync("/xasena/plugins/" + plugin_name + ".js");
-          return await message.sendMessage("*_Invalid Plugin_*\n ```" + e + "```");
+          return await message.sendMessage("_Invalid Plugin_\n kadayadi mwone_");
         }
 
         await installPlugin(url, plugin_name);
 
         await message.sendMessage(
-          `*_New plugin installed : ${commands.join(",")}_*`
+          `_New plugin installed : ${commands.join(",")}_`
         );
       }
     }
   }
 );
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   { 
@@ -314,7 +219,7 @@ command(
     var mesaj = "";
     var plugins = await PluginDB.findAll();
     if (plugins.length < 1) {
-      return await message.sendMessage("*_No external plugins installed_*");
+      return await message.sendMessage("_No plugins installed kadayadi mwone_");
     } else {
       plugins.map((plugin) => {
         mesaj +=
@@ -329,12 +234,6 @@ command(
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
-
 command(
   {
     pattern: "remove(?: |$)(.*)",
@@ -343,12 +242,12 @@ command(
     type:'user'
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("*_Need a plugin name_*");
+    if (!match) return await message.sendMessage("_Enter a plugin name kadayadi mwone_");
 
     var plugin = await PluginDB.findAll({ where: { name: match } });
 
     if (plugin.length < 1) {
-      return await message.sendMessage("*_Plugin not found_*");
+      return await message.sendMessage("_Plugin not found kadayadi Mwone_");
     } else {
       await plugin[0].destroy();
       delete require.cache[require.resolve("./" + match + ".js")];
@@ -357,17 +256,3 @@ command(
     }
   }
 );
-
-
-command(
-    {
-	pattern: 'setbio(.*)',
-	fromMe: true,
-	desc: 'to change your profile status',
-	type: 'user'
-}, async (message, match) => {
-	match = match || message.reply_message.text
-	if (!match) return await message.reply('*_Need Text_!*\n *Example: setbio _Ezra-XD_*.')
-	await message.client.updateProfileStatus(match)
-	await message.reply('*_Successfully bio updated_*')
-})
