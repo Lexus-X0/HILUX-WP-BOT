@@ -13,13 +13,13 @@ command(
 	{
 		pattern: 'trt ?(.*)',
 		fromMe: isPrivate,
-		desc: "hehhe",
+		desc: "translate",
 		type: 'search',
 	},
 	async (message, match) => {
 		if (!message.reply_message.text)
-			return await message.reply("*_Reply to a text msg_*\n*_Example : trt ml_*\n*_trt en & ```reply to a text```_*")
-                if(!match) return await message.reply("*_give me a language you want to convert_");
+			return await message.reply("_Reply to a text msg_")
+                if(!match) return await message.reply("_it's not a text msg_");
                 const {text} = await TRT(message.reply_message.text, match)
 		return await message.sendMessage(text);
 	}
