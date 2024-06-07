@@ -36,13 +36,12 @@ Description: ${i.desc}\`\`\``);
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
 
-      let menu = `╭───────────┈⊷ \n         *SUPERIOR* \n╰───────────┈⊷
+      let menu = `╭───────────┈⊷ \n         *${config.BOT_Name}* \n╰───────────┈⊷
 ╭───────────┈⊷
 ╠» Prefix : ${config.HANDLERS}
 ╠» mode :${config.WORK_TYPE.toLowerCase()}
 ╠» Date : ${date}
 ╠» Time : ${time}
-╠» Creator : Superior
 ╰───────────┈⊷\n${readMore}\n`;
 
 menu +=`\n`;
@@ -77,9 +76,9 @@ menu += `\n`;
         menu += `\n`;
       });
       menu += `𝘊𝘳𝘦𝘢𝘵𝘦𝘥 𝘣𝘺 *𝘚𝘜𝘗𝘌𝘙𝘐𝘖𝘙.*`;
-      let penu = tiny(menu)
+      let pari = tiny(menu)
       let img = config.BOT_INFO.split(';')[2]
-      return await message.sendFromUrl(img, {fileLength: "5555544444", gifPlayback: true, caption: (penu)}, {quoted: message })
+      await message.client.sendMessage(message.jid,{ image: {url:"https://i.imgur.com/PMjNNqY.jpeg"}, caption:(pari)}, {quoted: message })
     }
 }catch(e){
 message.reply(e)
