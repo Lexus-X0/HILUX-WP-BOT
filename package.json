@@ -1,5 +1,5 @@
 {
-  "name": "KADAYADI-BOT",
+  "name": "KADAYADI MWON",
   "version": "1.0.0",
   "description": "simple multi device WhatsApp Bot.",
   "main": "./index.js",
@@ -17,8 +17,8 @@
     "Hilux",
     "viperapi"
   ],
-  "author": "Kazhuveri",
-  "developer": "kazhuveri",
+  "author": "SUPERIOR",
+  "developer": "SUPERIOR",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/Lexus-X0/HILUX-WP-BOT/issues"
