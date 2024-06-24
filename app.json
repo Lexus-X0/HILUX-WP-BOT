@@ -1,9 +1,9 @@
 {
-  "name": "KADAYADI",
+  "name": "KADAYADI MWON",
   "version": "1.0.0",
   "description": "Simple WhatsApp Bot",
   "logo": "https://i.imgur.com/zwyUBQw.jpeg",
-   "keywords": ["whatsapp", "bot", "md", "multi-device", "wabot", "termux-bot", "sc-bot"],
+   "keywords": ["whatsapp", "bot", "md", "multi-device"],
   "repository": "https://github.com/Lexus-X0/HILUX-WP-BOT",
   "stack": "container",
   "env": {
@@ -22,18 +22,18 @@
      "AUDIO_DATA": {
       "description": "Ebter audio data ",
       "required": "false",
-      "value": "𝘒𝘢𝘥𝘢𝘺𝘢𝘥𝘪 𝘣𝘰𝘵;𝘉𝘺 𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳; https://i.imgur.com/BAOJ7jO.jpeg"
+      "value": "𝘒𝘢𝘥𝘢𝘺𝘢𝘥𝘪 𝘔𝘸𝘰𝘯;𝘉𝘺 𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳; https://i.imgur.com/BAOJ7jO.jpeg"
     
     },
        "STICKER_DATA": {
       "description": " Enter Sticker pack name",
       "required": "false",
-      "value": "𝘬𝘢𝘥𝘢𝘺𝘢𝘥𝘪 𝘣𝘰𝘵;𝘣𝘺 𝘴𝘶𝘱𝘦𝘳𝘪𝘰𝘳"
+      "value": "𝘬𝘢𝘥𝘢𝘺𝘢𝘥𝘪 𝘔𝘸𝘰𝘯;𝘣𝘺 𝘴𝘶𝘱𝘦𝘳𝘪𝘰𝘳"
     },
        "BOT_Name": {
       "description": "Enter your bot info",
       "required": "true",
-      "value": "Kadayadi BOT"
+      "value": "Kadayadi MWON"
     },
      "ALWAYS_ONLINE": {
       "description": "Bot online online : true",
@@ -50,9 +50,9 @@
       "value": "private"
      },
     "PREFIX": {
-      "description": "add a prefix { ^ is no prefix } ",
+      "description": "add a prefix",
       "required": true,
-       "value":"π"
+       "value":"^"
      },
     "HEROKU_APP_NAME": {
       "description": "Heroku app name, same as above entered",
