@@ -12,14 +12,18 @@ module.exports = {
   LOGS: toBool(process.env.LOGS) || true,
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   LANG: process.env.LANG || "EN",
-  HANDLERS: process.env.PREFIX || '.',
+  HANDLERS: process.env.PREFIX || '^',
   BRANCH: "master",
-  STICKER_DATA: process.env.STICKER_DATA || "HILUX BOT;kazhuveri",
-  BOT_INFO: process.env.BOT_INFO || "HILUX BOT;Kazhuveri",
-  AUDIO_DATA: process.env.AUDIO_DATA || "𝘩𝘰𝘭𝘶𝘹 𝘮𝘥 𝘣𝘰𝘵;𝘬𝘢𝘻𝘩𝘶𝘷𝘦𝘳𝘪",
+  STICKER_DATA: process.env.STICKER_DATA || "KADAYADI MWON;BY SUPERIOR",
+  BOT_NAME: process.env.BOT_NAME || "KADAYADI MWON",
+  AUDIO_DATA: process.env.AUDIO_DATA || "kadayadi mwon;created my superior",
   ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "true",
-  WORK_TYPE: process.env.WORK_TYPE || "private",
-  DATABASE_URL: DATABASE_URL,
+  WORK_TYPE: process.env.WORK_TYPE || "public",
+  HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
+  HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
+  SUDO: process.env.SUDO || "919497705819",
+  IMGBB_KEY: ["76a050f031972d9f27e329d767dd988f", "deb80cd12ababea1c9b9a8ad6ce3fab2", "78c84c62b32a88e86daf87dd509a657a"],
+DATABASE_URL: DATABASE_URL,
   DATABASE:
     DATABASE_URL === "./lib/database.db"
       ? new Sequelize({
@@ -37,8 +41,3 @@ module.exports = {
           },
           logging: false,
         }),
-  HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
-  HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
-  SUDO: process.env.SUDO || "0",
-  IMGBB_KEY: ["76a050f031972d9f27e329d767dd988f", "deb80cd12ababea1c9b9a8ad6ce3fab2", "78c84c62b32a88e86daf87dd509a657a"],
-};
