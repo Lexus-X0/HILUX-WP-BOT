@@ -36,7 +36,7 @@ Function(
     type: "downloader",
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("_Enter Search name,number_");
+    if (!match) return await message.sendMessage("_Enter Search name and number_");
     let [query, amount] = match.split(",");
     let result = await gimage(query, amount);
     await message.sendMessage(
